@@ -33,7 +33,7 @@ function Chat({ socket, username, room }) {
   return (
     <div className="chat-window">
         <div className="chat-header">
-            <p>Live Chat</p>
+            <p>Live Chat - Room: {room}</p>
         </div>
         <div className="chat-body">
          <ScrollToBottom className="message-container">
@@ -48,8 +48,8 @@ function Chat({ socket, username, room }) {
                     <p>{messageContent.message}</p>
                   </div>
                   <div className="message-meta">
-                    <p id="time">{messageContent.time}</p>
                     <p id="author">{messageContent.author}</p>
+                    <p id="time">{messageContent.time}</p>
                   </div>
                 </div>
               </div>
@@ -61,7 +61,7 @@ function Chat({ socket, username, room }) {
             <input 
                 type="text" 
                 value={currentMessage}
-                placeholder="Hey..."
+                placeholder="Start typing here..."
                 onChange={(event) => {
                     setCurrentMessage(event.target.value);
                 }} 
